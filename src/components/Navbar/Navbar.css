@@ -1,0 +1,28 @@
+.navbar {
+  width: 100%;
+  padding-inline: 5%;
+  padding-block: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar ul li {
+  list-style: none;
+  cursor: pointer;
+  
+
+  color: #fff;
+  font-family: "GT Walsheim Trial";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%; /* 21px */
+  letter-spacing: -0.5px;
+}

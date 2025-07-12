@@ -8,7 +8,7 @@ const Execution = () => {
       imageSRC: images.design,
       branche: "Design",
       content: (
-        <p>
+        <p className="leading-[130%] font-gtLight text-xs text-gray-300">
           We design with purpose — crafting visual systems, interfaces, and
           experiences that feel as good as they function.
           <br />
@@ -22,7 +22,7 @@ const Execution = () => {
       imageSRC: images.dev,
       branche: "Dev",
       content: (
-        <p>
+        <p className="leading-[130%] font-gtLight text-xs text-gray-300">
           We build clean, scalable, and performant digital experiences — from
           responsive websites to custom web applications.
           <br />
@@ -37,7 +37,7 @@ const Execution = () => {
       imageSRC: images.branding,
       branche: "Branding",
       content: (
-        <p className="font-gtLight text-xs">
+        <p className="leading-[130%] font-gtLight text-xs text-gray-300">
           We create brands that stand for something — built on strategy, brought
           to life with story, and expressed through every touchpoint.
           <br />

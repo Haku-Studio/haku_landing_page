@@ -57,7 +57,7 @@ const Team = () => {
               <img
                 src={images.haku}
                 alt=""
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-2/3 max-w-[180px]"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2"
                 draggable={false}
               />
             </div>

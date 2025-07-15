@@ -4,7 +4,7 @@ import { images } from "../../assets/images/assets.js";
 
 const Navbar = () => {
   return (
-    <div className="flex justify-between items-center px-4 lg:px-[7%] py-8">
+    <div className="flex justify-between items-center px-5 lg:px-[10%] py-8">
       <Link to='/' className="logo">
         <img src={images.logo} alt="" />
       </Link>

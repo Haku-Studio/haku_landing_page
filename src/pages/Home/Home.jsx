@@ -5,19 +5,28 @@ import Team from "../../components/Home/Sections/Team";
 import Line from "../../components/base/Line";
 
 const Home = () => {
-  return (
-    <div className="flex flex-col px-5 lg:px-[7%] lg:pt-[148px]  ">
-      <Header />
-      <Line />
+  const paddingInside = "px-5 lg:px-[10%]";
 
-      <div className=" pt-20 pb-28 space-y-[118px] ">
-        <Execution />
+  return (
+    <div className="flex flex-col lg:pt-[148px] w-full  ">
+      <div className={paddingInside}>
+        <Header />
+        <Line />
+      </div>
+
+      <div className="pt-20 pb-28 space-y-[118px] ">
+        <div className={paddingInside}>
+          <Execution />
+        </div>
+
         <CreativeWork />
       </div>
 
-      <Line />
+      <div className={paddingInside}>
+        <Line />
+      </div>
 
-      <div className=" py-16 lg:pt-[105px] lg:pb-[167.41px] ">
+      <div className={`py-16 lg:pt-[105px] lg:pb-[167.41px] ${paddingInside}`}>
         <Team />
       </div>
     </div>

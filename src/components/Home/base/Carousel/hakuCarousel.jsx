@@ -1,84 +1,66 @@
-/* eslint-disable no-unused-vars */
+// /* eslint-disable no-unused-vars */
+// HakuCarousel.jsx
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { Pagination, FreeMode } from "swiper/modules";
 
-import {
-  EffectCoverflow,
-  Pagination,
-  Navigation,
-  FreeMode,
-} from "swiper/modules";
-import { images } from "../../../../assets/images/assets";
-import { LuArrowLeft, LuArrowRight } from "react-icons/lu";
-import { RxArrowTopLeft } from "react-icons/rx";
-
-const HakuCarousel = () => {
-  const items = [
-    {
-      imageSRC: images.work.work1,
-      content: "Web development",
-    },
-    {
-      imageSRC: images.work.work2,
-      content: "Brand idea",
-    },
-    {
-      imageSRC: images.work.work3,
-      content: "Lorem ipsum",
-    },
-    {
-      imageSRC: images.design,
-      content: "Lorem ipsum",
-    },
-  ];
+const HakuCarousel = ({ items }) => {
+  const swiperRef = React.useRef(null);
 
   return (
-    <div className="flex pt-40 m-auto w-full justify-center items-center">
-      {/* <h1 className="heading">Haku carousel</h1> */}
+    <div className="flex flex-col items-center w-full px-2# sm:px-6# lg:px-0 pt-16sm:pt-24lg:pt-40">
       <Swiper
         effect="coverflow"
+        centeredSlides={true}
         breakpoints={{
-          340: {
-            slidesPerView: 2,
-            // spaceBetween: 15,
-          },
-          700: {
-            slidesPerView: 3,
-            // spaceBetween: 15,
-          },
+          320: { slidesPerView: 1, spaceBetween: 12 },
+          480: { slidesPerView: 1.3, spaceBetween: 16 },
+          640: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 3, spaceBetween: 32 },
         }}
         pagination={{ clickable: true }}
         freeMode={true}
-        modules={{ FreeMode, Pagination }}
         loop={true}
-        className=" swiper_container# max-w-[90%]# lg:max-w-[80%]# w-full gap-64"
+        className="w-full "
+        modules={[FreeMode, Pagination]}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
       >
-        {items.map((item, index) => {
-          return (
-            <SwiperSlide key={index}>
-              <div className=" flex flex-col gap-6 relative shadow-lg text-white rounded-xl p-8 h-[250px] w-[215px] lg:h-[600px] lg:w-full ">
+        {items.map((item, index) => (
+          <SwiperSlide key={index}>
+            {({ isActive }) => (
+              <div
+                onClick={() => {
+                  if (swiperRef.current) {
+                    swiperRef.current.slideToLoop(index);
+                  }
+                }}
+                className={`relative shadow-lg transition-all duration-300 ease-in-out overflow-hidden
+                  ${isActive ? "hover:rounded-2xl" : "scale-90 cursor-pointer opacity-40 rounded-none"}
+                 h-[340px] lg:h-[480px] xl:h-[600px]
+                  w-full max-w-[400px] lg:max-w-[680px] mx-auto`}
+              >
                 <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(${item.imageSRC})`,
-                  }}
+                  className="absolute inset-0 bg-center bg-cover"
+                  style={{ backgroundImage: `url(${item.imageSRC})` }}
                 ></div>
-                <div className="relative flex felx-col gap-3">
-                  <h1 className="text-xl lg:text-2xl">{item.content} </h1>
+                <div className="relative z-10 p-3 sm:p-4#">
+                  <p className="text-base drop-shadow-md ">
+                    {item.content}
+                  </p>
                 </div>
-
-                {/* <RxArrowTopLeft className=" absolute bottom-5 left-5 w-[35px] h-[35px] group-hover: " */}
               </div>
-            </SwiperSlide>
-          );
-        })}
+            )}
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
 };
+
 export default HakuCarousel;

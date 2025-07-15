@@ -6,26 +6,20 @@ import About from "./pages/About/About";
 import Contact from "./pages/Contact/Contact";
 import Navbar from "./components/layout/Navbar";
 import Footer from "./components/layout/Footer";
-import Caroussel from "./components/Home/base/Carousel/Caroussel";
 import CustomCursor from "./components/base/CustomCursor";
-import SwipeCarousel from "./components/Home/base/Carousel/SwipeCarousel";
-import HakuCarousel from "./components/Home/base/Carousel/hakuCarousel";
 
 function App() {
   return (
     <div className=" font-gt ">
       <BrowserRouter>
-        {/* <Navbar /> */}
-        {/* <CustomCursor /> */}
-        <HakuCarousel />
-        {/* <SwipeCarousel /> */}
-        {/* <Caroussel /> */}
-        {/* <Routes>
+        <Navbar />
+        <CustomCursor />
+        <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
-        </Routes> */}
-        {/* <Footer /> */}
+        </Routes>
+        <Footer />
       </BrowserRouter>
      </div>
   );

@@ -36,14 +36,16 @@ const Team = () => {
 
       <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-[103px] px-4 lg:pl-[5%]">
         {/* Image membre actif */}
-        <div className="relative w-[260px] xs:w-[320px] sm:w-[360px] md:w-[404px] h-[300px] xs:h-[360px] sm:h-[400px] md:h-[464.59px] transition-all duration-700 ease-in-out flex-shrink-0">
+        <div className="relative w-[340px] md:w-[404px] h-[340px] md:h-[464.59px] transition-all duration-700 ease-in-out flex-shrink-0">
           {teamList.map((member, idx) => (
             <div
               key={member.name}
               className={`absolute inset-0 rounded-2xl overflow-hidden transition-all duration-700
-                ${activeIndex === idx
-                  ? "opacity-100 scale-100 z-10"
-                  : "opacity-0 scale-95 z-0 pointer-events-none"}
+                ${
+                  activeIndex === idx
+                    ? "opacity-100 scale-100 z-10"
+                    : "opacity-0 scale-95 z-0 pointer-events-none"
+                }
               `}
               style={{
                 backgroundImage: `url(${member.image})`,
@@ -63,15 +65,17 @@ const Team = () => {
         </div>
 
         {/* Liste membres */}
-        <div className="space-y-4 sm:space-y-6 w-full max-w-xs">
+        <div className="space-y-4 sm:space-y-6 w-full# w-fit">
           {teamList.map((member, idx) => (
             <div
               key={member.name}
               onClick={() => setActiveIndex(idx)}
               className={`space-y-2 cursor-pointer px-4 py-3 rounded-xl transition-all duration-400
-                ${activeIndex === idx
-                  ? "bg-white/10 shadow-lg scale-105 opacity-100"
-                  : "opacity-40 hover:opacity-80"}
+                ${
+                  activeIndex === idx
+                    ? "bg-white/10 shadow-lg opacity-100"
+                    : "opacity-40 hover:opacity-80"
+                }
               `}
             >
               <h1 className="text-lg font-semibold">{member.name}</h1>

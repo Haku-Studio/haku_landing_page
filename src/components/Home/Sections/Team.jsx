@@ -40,7 +40,7 @@ const Team = () => {
           {teamList.map((member, idx) => (
             <div
               key={member.name}
-              className={`absolute inset-0 rounded-2xl overflow-hidden transition-all duration-700
+              className={`absolute inset-0  overflow-hidden transition-all duration-700
                 ${
                   activeIndex === idx
                     ? "opacity-100 scale-100 z-10"
@@ -70,16 +70,16 @@ const Team = () => {
             <div
               key={member.name}
               onClick={() => setActiveIndex(idx)}
-              className={`space-y-2 cursor-pointer px-4 py-3 rounded-xl transition-all duration-400
+              className={`space-y-4 cursor-pointer px-4 py-3 rounded-xl transition-all duration-400
                 ${
                   activeIndex === idx
-                    ? "bg-white/10 shadow-lg opacity-100"
+                    ? "opacity-100"
                     : "opacity-40 hover:opacity-80"
                 }
               `}
             >
-              <h1 className="text-lg font-semibold">{member.name}</h1>
-              <p className="text-sm opacity-80">{member.role}</p>
+              <h1 className="text-lg font-gtLight">{member.name}</h1>
+              <p className="text-xs opacity-80 font-gtLight">{member.role}</p>
             </div>
           ))}
         </div>

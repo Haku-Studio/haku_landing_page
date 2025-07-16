@@ -17,6 +17,7 @@ const Execution = () => {
           emotion, and the details that make all the difference.
         </p>
       ),
+      color: "#FED315"
     },
     {
       imageSRC: images.dev,
@@ -31,7 +32,7 @@ const Execution = () => {
           seamless, creative engineering.
         </p>
       ),
-      color: "text-white"
+      color: "#FFFFFF"
     },
     {
       imageSRC: images.branding,
@@ -46,6 +47,7 @@ const Execution = () => {
           brand from the inside out.
         </p>
       ),
+      color: "#E3F805"
     },
   ];
 

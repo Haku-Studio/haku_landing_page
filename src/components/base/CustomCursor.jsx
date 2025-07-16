@@ -43,7 +43,7 @@ const CustomCursor = () => {
 
   return (
     <motion.div
-      className="fixed bg-primary top-0 left-0 w-6 h-6 z-[999] rounded-full pointer-events-none flex items-center justify-center mix-blend-difference"
+      className="fixed bg-primary top-0 left-0 w-6 h-6 z-[999] rounded-full pointer-events-none flex items-center justify-center"
       style={{
         translateX: x,
         translateY: y,
